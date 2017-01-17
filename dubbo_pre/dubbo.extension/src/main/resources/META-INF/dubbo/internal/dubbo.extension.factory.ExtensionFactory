@@ -1,0 +1,3 @@
+adaptive=dubbo.extension.factory.AdaptiveExtensionFactory
+spi=dubbo.extension.factory.SpiExtensionFactory
+spring=dubbo.extension.factory.SpringExtensionFactory

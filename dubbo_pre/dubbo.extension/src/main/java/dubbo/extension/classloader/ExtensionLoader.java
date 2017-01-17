@@ -45,6 +45,7 @@ import dubbo.extension.annotation.Activate;
 import dubbo.extension.annotation.Adaptive;
 import dubbo.extension.annotation.SPI;
 import dubbo.extension.factory.ExtensionFactory;
+import dubbo.extension.helper.ActivateComparator;
 
 /**
  * Dubbo使用的扩展点获取。<p>
@@ -708,7 +709,7 @@ public class ExtensionLoader<T> {
     
     @SuppressWarnings("deprecation")
     private String findAnnotationName(Class<?> clazz) {
-        com.alibaba.dubbo.common.Extension extension = clazz.getAnnotation(com.alibaba.dubbo.common.Extension.class);
+    	SPI extension = clazz.getAnnotation(SPI.class);
         if (extension == null) {
             String name = clazz.getSimpleName();
             if (name.endsWith(type.getSimpleName())) {
@@ -739,7 +740,7 @@ public class ExtensionLoader<T> {
     private Class<?> createAdaptiveExtensionClass() {
         String code = createAdaptiveExtensionClassCode();
         ClassLoader classLoader = findClassLoader();
-        com.alibaba.dubbo.common.compiler.Compiler compiler = ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.common.compiler.Compiler.class).getAdaptiveExtension();
+        dubbo.extension.spis.Compiler compiler = ExtensionLoader.getExtensionLoader(dubbo.extension.spis.Compiler.class).getAdaptiveExtension();
         return compiler.compile(code, classLoader);
     }
     

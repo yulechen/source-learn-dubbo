@@ -74,9 +74,10 @@ public class ConfigUtils {
 	    List<String> defaults = new ArrayList<String>();
         if (def != null) {
             for (String name : def) {
-                if (ExtensionLoader.getExtensionLoader(type).hasExtension(name)) {
-                    defaults.add(name);
-                }
+            System.err.println("ERROR");	
+//                if (ExtensionLoader.getExtensionLoader(type).hasExtension(name)) {
+//                    defaults.add(name);
+//                }
             }
         }
         

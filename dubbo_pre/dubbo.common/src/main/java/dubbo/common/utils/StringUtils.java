@@ -440,12 +440,13 @@ public final class StringUtils {
             if (arg == null || ReflectUtils.isPrimitives(arg.getClass())) {
                 buf.append(arg);
             } else {
-                try {
-                    buf.append(JSON.json(arg));
-                } catch (IOException e) {
-                    logger.warn(e.getMessage(), e);
-                    buf.append(arg);
-                }
+            	  System.err.println("ERROR");	
+//                try {
+//                    buf.append(JSON.json(arg));
+//                } catch (IOException e) {
+//                    logger.warn(e.getMessage(), e);
+//                    buf.append(arg);
+//                }
             }
         }
         return buf.toString();

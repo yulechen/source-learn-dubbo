@@ -1,0 +1,4 @@
+spring=dubbo.extension.spis.impl.container.SpringContainer
+jetty=dubbo.extension.spis.impl.container.JettyContainer
+log4j=dubbo.extension.spis.impl.container.Log4jContainer
+logback=dubbo.extension.spis.impl.container.LogbackContainer
