@@ -9,5 +9,7 @@
   	<module>dubbo.extension</module>
   	<module>dubbo.src</module>
   	<module>dubbo.common</module>
+    <module>dubbo.remoting</module>
+  	<module>dubbo.rpc</module>
   </modules>
 </project>
